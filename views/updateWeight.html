@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <a href="/">Return to home page</a> 
+        <link rel="stylesheet" href="lab.css">
+    </head>
+    <h1>
+        <b>Update Parcel Weight</b>
+    </h1>
+    <body>
+        <a href="/new">New Parcel</a> 
+        <a href="/list">List Parcel</a> 
+        <a href="/delete">Delete Parcel</a>
+        <a href="/update">Update Parcel</a>
+        <a href="/updateWeight">Update Parcel Weight</a>
+        <hr/>
+        <br>
+        <form method="post" action="updateParcelWeight"> 
+            Enter the name of the sender and the weight to update the parcels:<br>
+            <table>
+                <tr>
+                    <td>Sender</td>
+                    <td> <input type = "text" name="sender"> </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>           
+                <tr>
+                    <td>Weight</td>
+                    <td> <input type = "number" name = "weight"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+               
+            </table>
+
+            <button type="submit">Submit</button>
+        </form> 
+    </body>
+</html>

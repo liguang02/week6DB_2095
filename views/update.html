@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <a href="/">Return to home page</a> 
+        <link rel="stylesheet" href="lab.css">
+    </head>
+    <h1>
+        <b>Update Parcel</b>
+    </h1>
+    <body>
+        <a href="/new">New Parcel</a> 
+        <a href="/list">List Parcel</a> 
+        <a href="/delete">Delete Parcel</a>
+        <a href="/update">Update Parcel</a>
+        <a href="/updateWeight">Update Parcel Weight</a>
+        <hr/>
+        <br>
+        <form method="post" action="updateParcel"> 
+            Enter the details of the new parcel to update:<br>
+            <table>
+                <tr>
+                    <td>ID</td>
+                    <td> <input type = "text" name="id"> </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Sender</td>
+                    <td> <input type = "text" name="sender"> </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td> <input type = "text" name="address"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Weight</td>
+                    <td> <input type = "number" name = "weight"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Fragile</td>
+                    <td> <select id = "fragile" name = "fragile">
+                        <option value="yes">Yes</option>
+                        <option value="no"> No</option>
+                    </td>
+                </tr>
+            </table>
+
+            <button type="submit">Submit</button>
+        </form> 
+    </body>
+</html>

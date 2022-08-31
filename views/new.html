@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <a href="/">Return to home page</a> 
+        <style>
+            table,tr,td{
+                border:3px solid black;
+                size: 100rem;
+            }
+        </style>
+        <link rel="stylesheet" href="lab.css">
+    </head>
+    
+    <body>
+        <a href="/new">New Parcel</a> 
+        <a href="/list">List Parcel</a> 
+        <a href="/delete">Delete Parcel</a>
+        <a href="/update">Update Parcel</a>
+        <a href="/updateWeight">Update Parcel Weight</a>
+        <hr/>
+        <p>
+            Please enter the information<br>
+            (Name and address must be at least 3 characters and weight must be positive)
+        </p>
+        
+        <form action="/newpost" method="POST">
+            
+            <table>
+                <tr>
+                    <td>Sender</td>
+                    <td> <input type = "text" name="sender"> </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td> <input type = "text" name="address"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Weight</td>
+                    <td> <input type = "number" name = "weight"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Fragile</td>
+                    <td> <select id = "fragile" name = "fragile">
+                        <option value="yes">Yes</option>
+                        <option value="no"> No</option>
+                    </td>
+                </tr>
+            </table>
+            <button type = "submit">Submit form</button>
+
+        </form>
+    </body>
+</html>

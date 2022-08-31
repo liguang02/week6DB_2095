@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <a href="/">Return to home page</a> 
+        <style>
+            table,tr,td{
+                border:3px solid black;
+                size: 100rem;
+            }
+        </style>
+        <link rel="stylesheet" href="lab.css">
+    </head>
+    <body>
+        <a href="/new">New Parcel</a> 
+        <a href="/list">List Parcel</a> 
+        <a href="/delete">Delete Parcel</a>
+        <a href="/update">Update Parcel</a>
+        <a href="/updateWeight">Update Parcel Weight</a>
+        <hr/>
+        <form action="/list" method="POST">
+            <table>
+                <tr>
+                    <th>ID </th>
+                    <th></th>
+                    <th>Sender</th>
+                    <th></th>
+                    <th>Address</th>
+                    <th></th>
+                    <th>Weight</th>
+                    <th></th>
+                    <th>IsFragile?</th>
+                </tr>
+                <% for ( let i =0; i< parcelDb.length;i++){ %>
+                    <tr>
+                        <td>
+                            <%= parcelDb[i]._id %>
+                        </td>
+                        <td></td>
+                        <td>
+                            <%= parcelDb[i].sender %>
+                        </td>
+                        <td></td>
+                        <td>
+                            <%= parcelDb[i].address %>
+                        </td>
+                        <td></td>
+                        <td>
+                            <%= parcelDb[i].weight %>
+                        </td>
+                        <td></td>
+                        <td>
+                            <%= parcelDb[i].fragile %>
+                        </td>
+                    </tr>
+                    <% } %>
+            </table>
+        </form>
+    </body>
+</html>
