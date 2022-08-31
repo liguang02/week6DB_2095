@@ -1,31 +1,47 @@
 let express = require("express");
-let ejs = require("ejs");
-const mongodb =require("mongodb");
+// let ejs = require("ejs");
+// const mongodb =require("mongodb");
 let path = require('path');
+const mongoose = require('mongoose');
+
 
 let app = express();
+const url = 'mongodb://localhost:27017/week6DB';
 
 
 app.use(express.urlencoded({extended:true}));
 app.use("/css", express.static(path.join(__dirname, "node_modules/bootstrap/dist/css")))
 app.use("/js", express.static(path.join(__dirname, "node_modules/bootstrap/dist/js")))
+const Parcel = require('./models/parcel');
 
 app.engine("html", require("ejs").renderFile);
 app.set("view engine", "html");
-app.listen(8085);
+app.listen(8081);
 
-const MongoClient = mongodb.MongoClient;
-const url = "mongodb://localhost:27017/";
+// const MongoClient = mongodb.MongoClient;
+// const url = "mongodb://localhost:27017/";
 
-let db;
-MongoClient.connect(url, {useNewUrlParser: true}, function(err, client){
-    if(err){
-        console.log('Err ',err);
-    }else{
-        console.log("Connected successfully to server");
-        db = client.db('Lab_POMS');
-    }
-})
+// let db;
+// MongoClient.connect(url, {useNewUrlParser: true}, function(err, client){
+//     if(err){
+//         console.log('Err ',err);
+//     }else{
+//         console.log("Connected successfully to server");
+//         db = client.db('Lab_POMS');
+//     }
+// })
+
+mongoose.connect(url, function (err) {
+    if (err === null) console.log('Connected Successfully');
+   
+        let parcel = new Parcel({ sender: 'Chai', address: 'Perth', weight: 2021, fragile: true });
+        parcel.save(function (err) {
+            if (err) console.log('Unable to save'+err) ;
+            else console.log("Save Successfully");
+
+        });
+    
+});
 
 app.use(express.static('css'));
 app.use(express.static('imgs'));
